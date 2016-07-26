@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+     android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="7dp">
+
+    <ImageView
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:id="@+id/soft_icon"
+        android:src="@mipmap/ic_launcher"
+        android:layout_alignParentStart="true"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/softe_name"
+        android:text="应用宝"
+        android:layout_toRightOf="@id/soft_icon"
+        android:layout_marginStart="15dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/soft_PackgeName"
+        android:text="com.softe.yinyongbao"
+        android:layout_toRightOf="@+id/soft_icon"
+        android:layout_marginStart="7dp"
+        android:layout_below="@+id/softe_name"
+        android:layout_marginTop="7dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/flag_Tv"
+        android:text="用户"
+        android:layout_alignParentEnd="true"
+        />
+</RelativeLayout>

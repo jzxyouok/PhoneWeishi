@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.ecjtu.liuqin.weishi_my.ui.Anti_theftMode.activity.PhoneAntiActivity">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimary"
+        android:minHeight="?attr/actionBarSize"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+        app:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+        app:title="手机防盗"
+        app:titleTextColor="@android:color/white"></android.support.v7.widget.Toolbar>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.3"
+        android:background="@color/colorPrimary"
+        >
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="若手机丢失，"
+            android:id="@+id/Tv"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="35dp"
+            android:textColor="#FFFFFF"
+            android:textSize="18sp" />
+
+        <ImageView
+            android:id="@+id/anti_icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_toLeftOf="@+id/Tv"
+            android:layout_marginEnd="12dp"
+            android:layout_alignTop="@+id/Tv"
+            android:src="@mipmap/ic_launcher" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/TV_s"
+            android:layout_toRightOf="@+id/anti_icon"
+            android:text="请通过m.qq.com查找控制"
+            android:layout_below="@+id/Tv"
+            android:layout_marginTop="7dp"
+            android:textColor="#FFFFFF"
+            android:textSize="18sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="添加紧急联系人"
+            android:id="@+id/addPeople"
+            android:textColor="#FFFFFF"
+            android:textSize="18sp"
+            android:layout_marginTop="15dp"
+            android:layout_below="@+id/TV_s"
+            android:background="@drawable/addlinp"
+            android:layout_centerHorizontal="true"/>
+    </RelativeLayout>
+    <GridView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.7"
+        android:id="@+id/anti_grid"
+        android:numColumns="3"
+        android:padding="15sp"
+        android:horizontalSpacing="20dp"
+        android:verticalSpacing="20sp"
+        android:background="#FFFFFF">
+
+    </GridView>
+</LinearLayout>

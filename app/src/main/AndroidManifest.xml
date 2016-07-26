@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.ecjtu.liuqin.weishi_my">
+
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+    <uses-permission android:name="android.permission.READ_CONTACTS" />
+    <uses-permission android:name="android.permission.SEND_SMS" />
+    <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
+    <uses-permission android:name="android.permission.RECEIVE_SMS" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+    <!-- 添加访问手机状态的权限 -->
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+
+    <!-- To auto-complete the email text field in the login form with the user's emails -->
+    <uses-permission android:name="android.permission.GET_ACCOUNTS" />
+    <uses-permission android:name="android.permission.READ_PROFILE" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name=".ui.MainActivity" />
+        <activity android:name=".ui.InterceptMode.activity.CallSMSActivity" />
+
+
+   <!--  <receiver android:name=".ui.InterceptMode.broadcast.SMSRcever">
+            <intent-filter android:priority="1000">
+                <action android:name="android.provider.Telephony.SMS_RECEIVED" />
+            </intent-filter>
+        </receiver>-->
+
+
+        <activity android:name=".ui.InterceptMode.activity.PnumberListActivity" />
+        <activity android:name=".ui.SofterManageMode.activity.SofteManagerActivity" />
+        <activity
+            android:name=".ui.Anti_theftMode.activity.LoginActivity"
+            android:label="@string/action_sign_in" />
+
+        <receiver android:name=".ui.Anti_theftMode.broadcast.SIMChangeReciver">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+            </intent-filter>
+        </receiver>
+
+        <activity android:name=".ui.Anti_theftMode.activity.ProtectedActivity"></activity>
+        <activity
+            android:name=".ui.Anti_theftMode.activity.EnterPassActivity"
+            android:windowSoftInputMode="adjustResize" />
+        <activity android:name=".ui.Anti_theftMode.activity.PhoneAntiActivity" />
+        <activity
+            android:name=".ui.Anti_theftMode.activity.AddLinkActivity"
+            android:windowSoftInputMode="adjustResize" />
+        <activity android:name=".ui.Anti_theftMode.activity.AntiMusicActivity" />
+        <activity android:name=".ui.Anti_theftMode.activity.AntiLoccalActivity" />
+
+        <receiver
+            android:name=".ui.Anti_theftMode.broadcast.ScreenDivceReciver"
+            android:enabled="true"
+            android:exported="true"
+            android:permission="android.permission.BIND_DEVICE_ADMIN">
+            <meta-data
+                android:name="android.app.device_admin"
+                android:resource="@xml/lockourscreen" />
+
+            <intent-filter>
+                <action android:name="android.app.action.DEVICE_ADMIN_ENABLED" />
+            </intent-filter>
+        </receiver>
+      <!-- <receiver android:name=".ui.Anti_theftMode.broadcast.SIMProtectReciver">
+            <intent-filter android:priority="1000">
+                <action android:name="android.provider.Telephony.SMS_RECEIVED" />
+            </intent-filter>
+        </receiver>-->
+
+        <service
+            android:name=".ui.Anti_theftMode.service.AntiProtectService"
+            android:enabled="true"
+            android:exported="true" />
+
+        <activity android:name=".ui.Anti_theftMode.activity.AntiLocationActivity" />
+        <activity android:name=".ui.Anti_theftMode.activity.AntiClearActivity" />
+        <activity android:name=".ui.TrafficMode.activity.TrafficActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".ui.TrafficMode.activity.AppTranfficActivity"></activity>
+
+        <receiver android:name="cn.wth.trafic.receiver.DeviceShutDownReceiver">
+            <intent-filter android:priority="1000">
+                <action android:name="android.intent.action.ACTION_SHUTDOWN"/>
+            </intent-filter>
+        </receiver>
+
+        <receiver android:name="cn.wth.trafic.receiver.WifiStateReceiver">
+            <intent-filter >
+                <action android:name="android.net.wifi.WIFI_STATE_CHANGED"/>
+            </intent-filter>
+        </receiver>
+
+
+        <receiver android:name=".ui.TrafficMode.broadcast.YunyingShangReciver">
+            <intent-filter android:priority="1000">
+                <action android:name="android.provider.Telephony.SMS_RECEIVED" />
+            </intent-filter>
+        </receiver>
+    </application>
+
+</manifest>
